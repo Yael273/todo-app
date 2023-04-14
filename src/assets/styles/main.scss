@@ -1,0 +1,63 @@
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: #61dafb
+}
+
+// SETUP
+@import 'setup/typography';
+@import 'setup/variables';
+
+// BASICS
+@import 'basics/base';
+@import 'basics/layout';
+
+// COMPONENTS
+@import 'cmps/app-header';
+@import 'cmps/todo-list';
+@import 'cmps/todo-preview';
+@import 'cmps/todo-add';
+
+//PAGES
+@import 'pages/home-page';
+@import 'pages/todo-index';
+@import 'pages/todo-details';
+
+
+
+
