@@ -1,8 +1,12 @@
 .todo-add{
+    padding: 5px 0;
     form{
         display: flex;
-        // align-items: center;
         justify-content: center;
         gap: 10px;
+
+        input{
+            width: 265px;
+        }
     }
 }

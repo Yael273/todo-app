@@ -18,32 +18,32 @@ export function HomePage() {
         loadTodos()
         window.addEventListener("scroll", listenToScroll);
         return () =>
-           window.removeEventListener("scroll", listenToScroll);
+            window.removeEventListener("scroll", listenToScroll);
     }, [])
 
-    function listenToScroll(){
+    function listenToScroll() {
         let heightToHideFrom = 200;
         const winScroll = document.body.scrollTop ||
             document.documentElement.scrollTop;
-      
+
         if (winScroll > heightToHideFrom) {
-           isVisible &&      // to limit setting state only the first time
-             setIsVisible(false);
+            isVisible &&      // to limit setting state only the first time
+                setIsVisible(false);
         } else {
-             setIsVisible(true);
+            setIsVisible(true);
         }
-      };
+    };
 
     return <section className="home-page">
 
         <div className="hero">
             <h1>Todos</h1>
             <p>Keep your life on track, one task at a time.</p>
-            {isVisible && <div class="scroll-down"></div>}
+            {isVisible && <div className="scroll-down"></div>}
         </div>
 
         <h2>Important todos</h2>
-
+        {!importantTodos.length && <p>no todos...</p>}
         <ul className="important-list">
             {
                 importantTodos.map(todo => <li key={todo._id}>
@@ -58,7 +58,7 @@ export function HomePage() {
         </ul>
 
         <h2>Done todos</h2>
-
+        {!doneTodos.length && <p>no todos...</p>}
         <ul className="important-list">
             {
                 doneTodos.map(todo => <li key={todo._id}>

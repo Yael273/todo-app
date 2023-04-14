@@ -4,9 +4,9 @@ import { REMOVE_TODO, SET_TODOS, ADD_TODO, UPDATE_TODO, UNDO_REMOVE_TODO, SET_IS
 import { store } from '../store.js'
 
 
-export function loadTodos() {
+export function loadTodos(filterBy) {
     store.dispatch({ type: SET_IS_LOADING, isLoading: true })
-    return todoService.query()
+    return todoService.query(filterBy)
         .then((todos) => {
             store.dispatch({ type: SET_TODOS, todos })
         })

@@ -12,11 +12,16 @@ export const todoService = {
     save,
     remove,
     getEmptyTodo,
+    getDefaultFilter
 }
 window.cs = todoService
 
-async function query() {
+async function query(filterBy = getDefaultFilter()) {
     var todos = await storageService.query(STORAGE_KEY)
+    if (filterBy.searchTxt) {
+        const regex = new RegExp(filterBy.searchTxt, 'i')
+        todos = todos.filter((todo) => regex.test(todo.txt))
+    }
     return todos
 }
 
@@ -48,6 +53,11 @@ function getEmptyTodo() {
     }
 }
 
+function getDefaultFilter() {
+    return { isDone: 'all', searchTxt: '' }
+}
+
+
 function _createTodos() {
     let todos = utilService.loadFromStorage(STORAGE_KEY)
     if (!todos || !todos.length) {
@@ -58,7 +68,7 @@ function _createTodos() {
                 desc: 'This is a todo description',
                 date: Date.now(),
                 color: '#f269a2',
-                isDone: false,
+                isDone: true,
                 isImportant: true
             },
             {
@@ -66,9 +76,27 @@ function _createTodos() {
                 txt: 'This is another todo',
                 desc: 'This is a todo description',
                 date: Date.now(),
-                color: '#16d098',
+                color: '#ffc800',
                 isDone: false,
                 isImportant: false
+            },
+            {
+                _id: utilService.makeId(),
+                txt: 'Go to the beach',
+                desc: 'add a description...',
+                date: Date.now(),
+                color: '#ded3d3',
+                isDone: false,
+                isImportant: true
+            },
+            {
+                _id: utilService.makeId(),
+                txt: 'Buy milk',
+                desc: 'add a description...',
+                date: Date.now(),
+                color: '#16d098',
+                isDone: true,
+                isImportant: true
             },
         ]
         utilService.saveToStorage(STORAGE_KEY, todos)

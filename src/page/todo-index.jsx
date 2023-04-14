@@ -1,18 +1,23 @@
 import { useSelector } from "react-redux";
 import { todoService } from "../services/todo.service";
-import { loadTodos, removeTodo } from "../store/action/todo.action";
+import { loadTodos, removeTodo, setFilter } from "../store/action/todo.action";
 import { useEffect } from "react";
 import { TodoList } from "../cmps/todo-list";
 import { TodoAdd } from "../cmps/todo-add";
+import { TodoFilter } from "../cmps/todo-filter";
 
 export function TodoIndex() {
 
     const todos = useSelector((storeState) => storeState.todoModule.todos)
-    console.log('todos', todos);
+    const filterBy = useSelector((storeState) => storeState.todoModule.filterBy)
 
     useEffect(() => {
-        loadTodos()
-    }, [])
+        loadTodos(filterBy)
+    }, [filterBy])
+
+    function setFilterBy(filterBy) {
+        setFilter(filterBy)
+    }
 
     function onRemoveTodo(todoId) {
         try {
@@ -33,9 +38,10 @@ export function TodoIndex() {
     return <section className="todo-index">
         {/* <h1>Todos</h1> */}
 
-        <TodoAdd />
+        <TodoFilter setFilterBy={setFilterBy} />
 
         <div className="main-todo-content">
+            <TodoAdd />
             <TodoList todos={todos} onRemoveTodo={onRemoveTodo} getUserProgress={getUserProgress} />
             <div className="progress-bar-bg">
                 <div className="progress-bar" style={{ height: "24px", width: getUserProgress() + "%" }}>
@@ -44,7 +50,7 @@ export function TodoIndex() {
             </div>
         </div>
 
-
+        <p>{todos.length} todos</p>
 
     </section>
 }
