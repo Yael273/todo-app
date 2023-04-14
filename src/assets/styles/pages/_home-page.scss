@@ -1,9 +1,22 @@
 .home-page {
-    background-color: #0d112b;
+    // background-color: #0d112b;
     min-height: calc(100vh - 300px);
 
     font-size: calc(10px + 2vmin);
     color: white;
+
+    .hero {
+        margin: 200px auto;
+        margin-bottom: 400px;
+
+        h1, p {
+            margin: 0;
+        }
+
+        h1{
+            font-size: 9rem;
+        }
+    }
 
     .important-list {
         display: grid;
@@ -18,6 +31,7 @@
         margin: auto;
         padding: 20px;
     }
+
     .important-list-preview {
         padding: 10px;
         border-radius: 0.3rem;

@@ -57,7 +57,7 @@ function _createTodos() {
                 txt: 'This is a todo',
                 desc: 'This is a todo description',
                 date: Date.now(),
-                color: utilService.randomColor(),
+                color: '#f269a2',
                 isDone: false,
                 isImportant: true
             },
@@ -66,7 +66,7 @@ function _createTodos() {
                 txt: 'This is another todo',
                 desc: 'This is a todo description',
                 date: Date.now(),
-                color: utilService.randomColor(),
+                color: '#16d098',
                 isDone: false,
                 isImportant: false
             },

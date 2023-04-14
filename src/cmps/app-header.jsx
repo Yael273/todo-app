@@ -5,7 +5,7 @@ export function AppHeader() {
 
     return <section className="app-header">
         <header>
-            <h2>Todo</h2>
+            <h2>Todos</h2>
             <nav>
                 {routes.map(route => <NavLink key={route.path} to={route.path}>{route.label}</NavLink>)}
             </nav>
