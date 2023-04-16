@@ -17,7 +17,7 @@ export function TodoDetails() {
 
     useEffect(() => {
         loadTodo()
-    }, [todoId])
+    }, [todoId, todo])
 
     async function loadTodo() {
         try {

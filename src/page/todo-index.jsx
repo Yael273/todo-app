@@ -5,6 +5,8 @@ import { useEffect } from "react";
 import { TodoList } from "../cmps/todo-list";
 import { TodoAdd } from "../cmps/todo-add";
 import { TodoFilter } from "../cmps/todo-filter";
+import { TodoDetails } from "./todo-details";
+import { Outlet, useLocation } from "react-router-dom";
 
 export function TodoIndex() {
 
@@ -40,15 +42,31 @@ export function TodoIndex() {
 
         <TodoFilter setFilterBy={setFilterBy} />
 
-        <div className="main-todo-content">
-            <TodoAdd />
-            <TodoList todos={todos} onRemoveTodo={onRemoveTodo} getUserProgress={getUserProgress} />
-            <div className="progress-bar-bg">
-                <div className="progress-bar" style={{ height: "24px", width: getUserProgress() + "%" }}>
-                    <span>{getUserProgress()}%</span>
+        {/* <div className="main-todo-content">
+                <TodoAdd />
+                <TodoList todos={todos} onRemoveTodo={onRemoveTodo} getUserProgress={getUserProgress} />
+                <div className="progress-bar-bg">
+                    <div className="progress-bar" style={{ height: "20px", width: getUserProgress() + "%" }}>
+                        <span>{getUserProgress()}%</span>
+                    </div>
                 </div>
             </div>
+            <Outlet /> */}
+        <div className="main-content-index">
+            <div className="main-todo-content">
+                <TodoAdd />
+                <TodoList todos={todos} onRemoveTodo={onRemoveTodo} getUserProgress={getUserProgress} />
+                <div className="progress-bar-bg">
+                    <div className="progress-bar" style={{ height: "20px", width: getUserProgress() + "%" }}>
+                        <span>{getUserProgress()}%</span>
+                    </div>
+                </div>
+            </div>
+            <div className="todo-index-details">
+                <Outlet />
+            </div>
         </div>
+
 
         <p>{todos.length} todos</p>
 

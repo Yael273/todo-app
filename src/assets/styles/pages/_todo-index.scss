@@ -5,4 +5,12 @@
         margin: 0;
         font-size: 5.5rem;
     }
+
+    .main-content-index{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        margin: 20px auto;
+    }
 }
