@@ -1,6 +1,6 @@
 import { todoService } from "../services/todo.service"
 import { saveTodo } from "../store/action/todo.action"
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { flushSync } from "react-dom"
 
 export function TodoAdd({ handleAddClick }) {
@@ -22,6 +22,7 @@ export function TodoAdd({ handleAddClick }) {
         } catch (err) {
             console.log(err);
         }
+        setTodoToAdd(todoService.getEmptyTodo())
         handleAddClick()
 
     }
