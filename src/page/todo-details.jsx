@@ -13,8 +13,6 @@ export function TodoDetails() {
     const { todoId } = useParams()
     const navigate = useNavigate()
 
-    console.log('todo', todo);
-
     useEffect(() => {
         loadTodo()
     }, [todoId, todo])
