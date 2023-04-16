@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.97918d82.css",
-    "main.js": "/static/js/main.140cd1ca.js",
-    "static/media/pexels-roman-odintsov-4871011.jpg": "/static/media/pexels-roman-odintsov-4871011.924f66732b4c3393f001.jpg",
-    "static/media/ProductSans-Bold.ttf": "/static/media/ProductSans-Bold.153c4f86d79ce54c810c.ttf",
-    "static/media/AdriaDeco.ttf": "/static/media/AdriaDeco.c09d802c74d9104ac3a2.ttf",
-    "static/media/ProductSansRegular.ttf": "/static/media/ProductSansRegular.d165384076551a756b3c.ttf",
-    "static/media/loader.svg": "/static/media/loader.d7155833900576944a4af0ca67cbd3dc.svg",
-    "index.html": "/index.html",
-    "main.97918d82.css.map": "/static/css/main.97918d82.css.map",
-    "main.140cd1ca.js.map": "/static/js/main.140cd1ca.js.map"
+    "main.css": "/todo-app/static/css/main.23740b4c.css",
+    "main.js": "/todo-app/static/js/main.eeb3663a.js",
+    "static/media/pexels-roman-odintsov-4871011.jpg": "/todo-app/static/media/pexels-roman-odintsov-4871011.924f66732b4c3393f001.jpg",
+    "static/media/ProductSans-Bold.ttf": "/todo-app/static/media/ProductSans-Bold.153c4f86d79ce54c810c.ttf",
+    "static/media/AdriaDeco.ttf": "/todo-app/static/media/AdriaDeco.c09d802c74d9104ac3a2.ttf",
+    "static/media/ProductSansRegular.ttf": "/todo-app/static/media/ProductSansRegular.d165384076551a756b3c.ttf",
+    "static/media/loader.svg": "/todo-app/static/media/loader.d7155833900576944a4af0ca67cbd3dc.svg",
+    "index.html": "/todo-app/index.html",
+    "main.23740b4c.css.map": "/todo-app/static/css/main.23740b4c.css.map",
+    "main.eeb3663a.js.map": "/todo-app/static/js/main.eeb3663a.js.map"
   },
   "entrypoints": [
-    "static/css/main.97918d82.css",
-    "static/js/main.140cd1ca.js"
+    "static/css/main.23740b4c.css",
+    "static/js/main.eeb3663a.js"
   ]
 }
