@@ -1,10 +1,9 @@
-import { TodoAdd } from "./todo-add";
 import { TodoPreview } from "./todo-preview";
 
-export function TodoList({ todos, onRemoveTodo }) {
-
+export function TodoList({ todos, onRemoveTodo, listRef }) {
+  
     return <section className="todo-list">
-        <ul>
+        <ul ref={listRef}>
             {
                 todos.map(todo => <li key={todo._id}>
                     <TodoPreview todo={todo} onRemoveTodo={onRemoveTodo}/>
