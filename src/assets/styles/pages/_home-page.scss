@@ -6,14 +6,29 @@
     color: white;
 
     .hero {
-        margin: 200px auto;
-        margin-bottom: 400px;
+        // margin: 300px auto;
+        // margin-bottom: 500px;
 
-        h1, p {
+        @include for-narrow-layout {
+            margin: 200px auto;
+            margin-bottom: 400px;
+        }
+
+        @include for-normal-layout  {
+            margin: 300px auto;
+            margin-bottom: 500px;
+        }
+
+     
+
+       
+
+        h1,
+        p {
             margin: 0;
         }
 
-        h1{
+        h1 {
             font-size: 9rem;
         }
     }
